@@ -1,0 +1,72 @@
+h1, h2
+{
+color: #ECECEA;
+text-align: center;
+            
+}
+            
+            
+.title
+{
+text-align: center;
+color: #ECECEA;
+font-family: 'Lato', sans-serif;
+}
+        
+body
+{
+color: #ECECEA;
+background-color: #558C89;
+font-family: 'Lato', sans-serif;
+font-size: 30px;
+}
+           
+span
+{
+display: block;
+}
+            
+img
+{
+border: none;
+display: block;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+audio
+{
+border: double;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+#faatext
+{
+display: none;
+margin-left: auto;
+margin-right: auto;
+text-align: center;	
+}
+
+#fartext
+{
+display: none;
+margin-left: auto;
+margin-right: auto;
+text-align: center; 
+}
+
+#fbotext 
+{
+display: none;
+margin-left: auto;
+margin-right: auto;
+text-align: center; 
+}
+
+.center{
+text-align: center; 
+}
