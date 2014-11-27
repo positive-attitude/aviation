@@ -1,60 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
+<?php
+error_reporting(E_ALL);
 
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/awesomestyle.css">
+require 'db.php';
 
-    <title>Aviation: Add content</title>
-    <style>
-        input{width: 300px;}
-        
-        button{
-            width: 100px;
-            height: 50px;
-            font-size: 20px;
-        }
-        
-    </style>
-</head>
+try 
+{
+	$dbh = new PDO("mysql:host=$hostname;
+		dbname=jim_aviation", $username, $password);
+	echo "Connected to database";
+} 
+catch (PDOException $e) {
+	echo $e->getMessage();
+}
 
-<body>
+$definition = $_POST['definition'];
+$img_file = $_POST['img_file'];
+$img_alt = $_POST['img_alt'];
+$audio_file = $_POST['audio_file'];
 
-<h4>Add new flashcard</h4>
+$sql = "INSERT INTO flashcard (definition, img_file, img_alt, audio_file) 
+	VALUES (:definition, :img_file, :img_alt, :audio_file)";
 
-<form id="addForm" action="" method="">
-    
-    <fieldset>
-		<legend>Flashcard details</legend>	
+$query = $dbh->prepare($sql);
+$query->execute(array(':definition'=>definition, ':img_file'=>img_file, 
+	':img_alt'=>img_alt, ':audio_file'=>audio_file));
 
-                <label>
-                        <span>Definition:</span>
-                        <input type="text" name="definition" value="" required autofocus><br>
-                </label>
-                <br>
-                
-                <label>
-                        <span>Image file name:</span>
-                        <input type="text" name="img_file" value=""  required autofocus><br>
-                </label>
-                <br>
-                
-                <label>
-                        <span>Image ALT description:</span>
-                        <input type="text" name="img_alt" value="" required><br>
-                </label>
-                <br>
-                
-                <label>
-                        <span>Audio file name:</span>
-                        <input type="email" name="audio_file" value="" required><br>
-                </label>
-                <br>
-
-<button name="submit" type="submit" id="">Submit</button>
-
-</fieldset>
-</form>
-	
-</body>
-</html>
+?>
