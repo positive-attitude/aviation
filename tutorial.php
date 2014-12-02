@@ -2,9 +2,7 @@
 <?php
 
     //Connect to the database
-    $username = "test";
-    $password = "test";
-    $hostname = "localhost";
+    include 'db.php';
 
     
     try {
