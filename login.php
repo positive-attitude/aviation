@@ -11,12 +11,12 @@ if (!file)
 	echo "Unable to open file";
 }
 
-foreach ($login as userpass)
+foreach ($login as $userpass)
 {
 	// Split the strings one by one
 	list($user, $pass) = explode(":", $userpass);
 
-	if ($username == $user) AND ($password == $pass))
+	if (($username == $user) AND ($password == $pass))
 	{
 		// Login successful
 		
