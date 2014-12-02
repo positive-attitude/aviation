@@ -4,36 +4,92 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/awesomestyle.css">
-		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        
-
-        <title>Aviation Flash Cards Version 2</title> 
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		
+	
+	
+	<!-- jQuery for Nav-->
+	<script>
+	    $('nav li ul').hide().removeClass('fallback');
+	    $('nav li').hover(
+	      function () {
+		$('ul', this).stop().slideDown(100);
+	      },
+	      function () {
+		$('ul', this).stop().slideUp(100);
+	      }
+	    );
+	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<!--END  jQuery for Nav-->
+	
+	<title>Aviation Flash Cards Version 3</title>
+    
     </head>
 
     <body>
         <h1>Welcome to the Aviation 101</h1>
 		 
-		<h2>Introduction to Aviation Slideshow</h2>
+	    <h2>Introduction to Aviation Slideshow</h2>
 		
-		<img src="images/img04.jpg" alt="Federal Aviation Regulation (FAR)">
-		<nav>
+	    
+	    <!-- New Nav-->
+	    <nav>
+	    <ul>
+	      <li><a href="#">Section 1</a>
+	      	<ul class="fallback">
+		  <li><a href="revised1.html">Sub-Link 1</a></li>
+		  <li><a href="revised2.html">Sub-Link 2</a></li>
+		  <li><a href="revised3.html">Sub-Link 3</a></li>
+		</ul>
+	      </li>
+	      <li>
+		<a href="#">Section 2</a>
+		<ul class="fallback">
+		  <li><a href="#">Sub-Link 1</a></li>
+		  <li><a href="#">Sub-Link 2</a></li>
+		  <li><a href="#">Sub-Link 3</a></li>
+		</ul>
+	      </li>
+	      <li>
+		<a href="#">Section 3</a>
+		<ul class="fallback">
+		  <li><a href="#">Sub-Link 1</a></li>
+		  <li><a href="#">Sub-Link 2</a></li>
+		  <li><a href="#">Sub-Link 3</a></li>
+		</ul>
+	      </li>
+	      <li><a href="quiz.html">Quiz</a></li>
+	      <li><a href="contact.html">Contact</a></li>
+	    </ul>
+	  </nav>
+	<!-- END New Nav-->
+	    	
 		
-            <ul>
-                <li>Section 1</li>
-                <li>Section 2</li>
-                <li>Section 3</li><br>
-		<a href= "quiz.html">Quiz</a>
-            </ul>
-
-        </nav>
+	    <form>
+			Name: 
+		<input type="text" name="Name">
+		<input type="submit" value="Submit">
+		</form> 
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+		$("form").submit(function(){
+			alert("Welcome to Aviation Flash Cards");
+			});
+		});
+	    </script>
     
        
-       
-        <br>
-		 <div class="center">
-		 <a href= "revised1.html">Begin</a>
-		 </div>
-	</br>
+       	<img src="images/img04.jpg" alt="Federal Aviation Regulation (FAR)"><br><br>
+		    
+        
+		
+	    <footer>Green River Community College<br>12401 SE 320th St, Auburn, WA 98092<br>
+		(253) 833-9111<br> <a href="http://www.greenriver.edu/academics/areas-of-study/details/aviation-technology.htm">*Additional Aviation Information*</a>
+	    </footer>
+		
+		
            
     </body>
 </html>

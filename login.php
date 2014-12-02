@@ -1,4 +1,7 @@
 <?php
+ob_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 include 'db.php';
 
@@ -6,24 +9,34 @@ include 'db.php';
     if ( isset ( $_SESSION['loggedin'] ) && $_SESSION['loggedin'] == true  ) {
         echo '<p>Hello '. $_SESSION['username'] . ', <a href="Logout.php">Logout.</a></p>';
     }else{
-        //If the user is not logged in display a login form
-        echo '<form action="index.php" method="post">';
-        echo '<input type="text" name="username">';
-        echo '<input type="text" name="password">';
-        echo '<input type="submit" name="submit" value="submit">';
-        echo '<form>';
     }
-    
-    $dbh = new PDO("mysql:host=localhost;dbname=jim_aviation", $username, $password);
-        $stmt = $dbh->prepare("SELECT * FROM users WHERE username=':name' AND password=':pwd'");
-        $stmt->bindParam(":name", $_POST['username']);
-        $stmt->bindParam(":pword", $_POST['password']);
+
+    if (!empty($username) && !empty($password)) {
+   
+    $db = new PDO("mysql:host=localhost;dbname=jim_aviation", $username, $password);
+        $stmt = $db->prepare("SELECT * FROM users WHERE username=? AND password=?");
+        $stmt->bindParam(1, $_POST['username']);
+        $stmt->bindParam(2, $_POST['password']);
         $stmt->execute();
 
-        if( $stmt->rowCount() > 0 ){
-
-            echo 'There is a match!';
-        }else{
-            echo 'nooooo';
-        }
+        $username = $_POST['username'];
+	if( $stmt->rowCount() == 1) {
+		// Student login
+		if (strstr($username, 'mail.greenriver.edu', 'true')) {
+			echo 'Access granted';
+			header('location: aviationHome.html');
+		}
+		// Admin login 
+		else if (strstr($username, 'greenriver.edu', 'true')){
+			echo 'ADMIN access granted';
+			header('location: admin_add.html');
+        } else{ 
+            echo 'Access denied &nbsp;';
+	    echo '<a href="login.html">Back</a>';
+		}
+	}
+    } else {
+	echo 'Please enter a username and password';	
+}
+ob_flush();
 ?>

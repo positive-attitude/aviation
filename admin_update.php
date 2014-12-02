@@ -16,12 +16,10 @@ $img_file = $_POST['img_file'];
 $img_alt = $_POST['img_alt'];
 $audio_file = $_POST['audio_file'];
 
-$sql = "UPDATE flashcard SET definition = :definition,  img_file = :img_file,
-	 img_alt = :img_alt, audio_file = :audio_file 
-	WHERE id = :id";
+$sql = "UPDATE flashcard SET definition=?, img_file=?, img_alt=?, audo_file=?
+	WHERE id=?";
 
 $query = $db->prepare($sql);
-$query->execute(array(':definition'=>username, ':img_file'=>img_file, 
-	':img_alt'=>img_alt, ':audio_file'=>audio_file));
+$query->execute(array($definition, $img_file, $img_alt, $audio_file, $id));
 
 ?>

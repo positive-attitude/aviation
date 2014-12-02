@@ -23,15 +23,23 @@
     
     //Get one of rows for $_GET  
     $sql = "SELECT id, definition, img_file, img_alt, audio_file FROM flashcard WHERE id=$id";
-    $result = $dbh->query($sql);
-    foreach ($result as $row) {
-            echo $row['id']."<br>"; 
-            echo $row['definition']."<br>"; 
-            echo $row['img_file']."<br>"; 
-            echo $row['img_alt']."<br>";
-            echo $row['audio_file']."<br>";
-            }
-            
+    
+    try {
+	$stmt = $dbh->prepare($sql);
+	$stmt->execute($a_bind_params);
+	$a_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch(PDOException $e) {
+    ÊÊtrigger_error('Wrong SQL: ' . $sql . ' Error: ' . $e->getMessage(), E_USER_ERROR);
+    }
+    
+    foreach($a_data as $row) {
+	echo $row['id'] . '<br>';
+	echo $row['definition'] . '<br>';
+	echo $row['img_file'] . '<br>';
+	echo $row['img_alt'] . '<br>';
+	echo $row['audo_file'];
+    }
+   
         if($row['id']!==NULL)
         {
             //echo "<h2>Data<h2>";
@@ -93,7 +101,7 @@
 			&larr;<a href="
                         <?php
                                 
-                                if ($previous==NULL || $previous=0){
+                                if ($previous==NULL || $previous==0){
                                     echo  'aviationHome.html';
                                 }else{
                                     echo 'tutorial.php?id='.$previous;
