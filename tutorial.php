@@ -23,7 +23,8 @@
     
     //Get one of rows for $_GET  
     $sql = "SELECT id, definition, img_file, img_alt, audio_file FROM flashcard WHERE id=$id";
-    $result = $dbh->query($sql);                foreach ($result as $row) {
+    $result = $dbh->query($sql);
+    foreach ($result as $row) {
             echo $row['id']."<br>"; 
             echo $row['definition']."<br>"; 
             echo $row['img_file']."<br>"; 
