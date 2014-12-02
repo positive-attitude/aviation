@@ -67,16 +67,11 @@
     <body>
                                   
         <h1>Aviation Flash Cards Version 3</h1>
-		
-	    <nav>
-            <ul>
-                <li>Section 1</li>
-                <li>Section 2</li>
-                <li>Section 3</li>
-		<li><a href= "quiz.html">Quiz</a></li>
-            </ul>
-        </nav>
-		
+	
+	<?php
+	include 'nav.php';
+	?>
+				
         <h5>Please click on the button to reveal the definition.</h5>
         
 	
