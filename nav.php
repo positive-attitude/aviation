@@ -3,9 +3,7 @@
 	    <ul>
 	      <li><a href="#">Key Terms</a>
 	      	<ul class="fallback">
-		  <li><a href="revised1.html">Federal Aviation Administration</a></li>
-		  <li><a href="revised2.html">Federal Aviation Regulation</a></li>
-		  <li><a href="revised3.html">Fixed Base Operator</a></li>
+		  <li><a href="page.php?id=1">Begin</a></li>
 		  <li><a href="quiz.php">Key Terms Quiz</a></li>
 		</ul>
 	      </li>
