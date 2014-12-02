@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 
-require 'db.php';
+include 'db.php';
 
 try 
 {
@@ -22,7 +22,7 @@ $sql = "INSERT INTO flashcard (definition, img_file, img_alt, audio_file)
 	VALUES (:definition, :img_file, :img_alt, :audio_file)";
 
 $query = $dbh->prepare($sql);
-$query->execute(array(':definition'=>definition, ':img_file'=>img_file, 
-	':img_alt'=>img_alt, ':audio_file'=>audio_file));
+$query->execute(array(':definition'=>$definition, ':img_file'=>$img_file, 
+	':img_alt'=>$img_alt, ':audio_file'=>$audio_file));
 
 ?>
