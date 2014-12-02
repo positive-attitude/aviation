@@ -11,16 +11,19 @@ if (!file)
 	echo "Unable to open file";
 }
 
-foreach ($login as $userpass)
+if (is_array($userpass)) {
+	
+	foreach ($login as $userpass)
 {
 	// Split the strings one by one
-	list($user, $pass) = explode(":", $userpass);
+		list($user, $pass) = explode(":", $userpass);
 
-	if (($username == $user) AND ($password == $pass))
-	{
-		// Login successful
-		
-
+		if (($username == $user) AND ($password == $pass))
+		{
+			// Login successful
+			
+	
+		}
 	}
 }
 ?>
