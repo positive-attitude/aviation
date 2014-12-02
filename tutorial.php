@@ -7,7 +7,7 @@
     
     try {
         $dbh = new PDO("mysql:host=$hostname;
-                       dbname=aviation", $username, $password);
+                       dbname=jim_aviation", $username, $password);
         //echo "Connected to database.";
     } catch (PDOException $e) {
         echo $e->getMessage();
