@@ -1,0 +1,4 @@
+Yoriko's Note:
+-extension update
+-Nav inlcude file
+-select statement for tutorial.php
