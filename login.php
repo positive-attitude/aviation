@@ -4,12 +4,11 @@ ob_start();
 //error_reporting(E_ALL);
 
 if ($_POST) {
-    if (!empty($username) && !empty($password)) {
 
         $form = $_POST;
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $username = $form['username'];
+        $password = $form['password'];
 
         //Check if the loggedin status is set to true, meaning that user is logged in.
         // if ( isset ( $_SESSION['loggedin'] ) && $_SESSION['loggedin'] == true  ) {
@@ -17,23 +16,24 @@ if ($_POST) {
         // }else{
         // }
 
+                if (empty($username) || empty($password)) {
+                    echo 'Please enter a username or password.';
+                    header('Refresh: 5; URL=login.html');
+                }
+
                 // Student login
-                if (strstr($username, 'mail.greenriver.edu', 'true')) {
+                else if (strstr($username, 'mail.greenriver.edu', 'true')) {
                     echo 'Access granted';
-                    header('location: aviationHome.html');
+                    header('location: aviationHome.php');
                 }
                 // Admin login 
                 else if (strstr($username, 'greenriver.edu', 'true')){
                     echo 'ADMIN access granted';
-                    header('location: admin_add.html');
+                    header('location: admin_add.php');
                 } else{ 
-                    echo 'Access denied &nbsp;';
+                    echo 'Access denied' . '<br>';
                 echo '<a href="login.html">Back</a>';
-                }
-            } else {
-    }
-	echo 'Please enter a username and password';
-    header('Refresh: 5; URL=login.html');	
+            }
 }
 ob_flush();
 ?>
