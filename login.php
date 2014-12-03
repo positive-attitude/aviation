@@ -32,7 +32,8 @@ if ($_POST) {
                 }
             } else {
     }
-	echo 'Please enter a username and password';	
+	echo 'Please enter a username and password';
+    header('Refresh: 5; URL=login.html');	
 }
 ob_flush();
 ?>
