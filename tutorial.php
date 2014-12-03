@@ -113,7 +113,10 @@
                         <?php
                                 if ($next==NULL){
                                     echo  'aviationHome.html';
-                                }else{
+                                } else if ($next==7){
+                                    echo 'tutorial.php?id=1';
+                                }
+                                else{
                                     echo 'tutorial.php?id='.$next;
                                 }
                         ?>
