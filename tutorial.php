@@ -29,16 +29,16 @@
 	$stmt->execute($a_bind_params);
 	$a_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e) {
-    ÊÊtrigger_error('Wrong SQL: ' . $sql . ' Error: ' . $e->getMessage(), E_USER_ERROR);
+    trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $e->getMessage(), E_USER_ERROR);
     }
     
     foreach($a_data as $row) {
-	echo $row['id'] . '<br>';
-	echo $row['definition'] . '<br>';
-	echo $row['img_file'] . '<br>';
-	echo $row['img_alt'] . '<br>';
-	echo $row['audo_file'];
-    }
+	//echo $row['id'] . '<br>';
+	//echo $row['definition'] . '<br>';
+	//echo $row['img_file'] . '<br>';
+	// echo $row['img_alt'] . '<br>';
+	// echo $row['audo_file'];
+     }
    
         if($row['id']!==NULL)
         {
@@ -85,7 +85,7 @@
         <button id="buttonFAA">Show Definition</button>
 	
         <div class="image1">	
-        <img src="images/<?php echo $row['img_file']; ?>" width=500 height=400 alt="<?php echo $row['img_alt']; ?>">
+        <img src="images/<?php echo $row['img_file']; ?>" alt="<?php echo $row['img_alt']; ?>">
         </div>
 	
         <p id="faatext" style="text-align: center;"><?php echo $row['img_alt']; ?></p>
@@ -97,7 +97,7 @@
 		</br>
 		
 		<br>
-			<div class="center">
+                <div class="center">
 			&larr;<a href="
                         <?php
                                 
@@ -118,6 +118,7 @@
                                 }
                         ?>
                         ">Next</a>&rarr;
+                        </div>
 			</div>
 		</br>
 

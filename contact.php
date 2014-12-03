@@ -1,3 +1,9 @@
+<?php
+if (isset($_POST['submit'])) {
+	echo 'Thank you for your submission.';
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +24,7 @@
 <h4>Please fill out the form below and someone will
 	get back to you soon.</h4>
 
-<form id="contactForm" action="contact_submit.asp" method="get">
+<form name="contactForm" action="" method="post">
 	<fieldset>
 		<legend>Contact Details</legend>	
 
@@ -31,9 +37,9 @@
 	<span>Subject:</span>
 <select name="subject" required>
 	<option value="">Select one</option>
-	<option value="A">A</option>
-	<option value="B">B</option>
-	<option value="C">C</option>
+	<option value="homework">Home Work Questions</option>
+	<option value="techissues">Tech. Questions</option>
+	<option value="other">All Other Inqueries</option>
 </select><br>
 </label>
 
@@ -52,7 +58,7 @@
 	<textarea name="message" rows="10" cols="40" wrap="soft" required></textarea><br>
 </label>
 
-<button name="submit" type="submit" id="contact-submit">Submit</button>
+<button name="submit" type="submit">Submit</button>
 
 </fieldset>
 </form>
@@ -60,8 +66,6 @@
 	<br>
 	<a href= "aviationHome.html">Home</a>
 	<br>
-
-
 
 </body>
 </html>

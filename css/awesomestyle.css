@@ -4,6 +4,10 @@ color: #ECECEA;
 text-align: center;
             
 }
+h2.pos_right {
+    position: right-side;
+    left: 20px;
+}
             
             
 .title
@@ -18,21 +22,21 @@ body
 color: #ECECEA;
 background-color: #558C89;
 font-family: 'Lato', sans-serif;
-font-size: 30px;
+font-size: 25px;
 }
-           
+
 span
 {
 display: block;
-}
+}      
+
             
 img
 {
-border: none;
+border: inset;
 display: block;
 margin-left: auto;
 margin-right: auto;
-
 }
 
 audio
@@ -48,7 +52,7 @@ margin-right: auto;
 display: none;
 margin-left: auto;
 margin-right: auto;
-text-align: center;	
+text-align: center; 
 }
 
 #fartext
@@ -68,5 +72,50 @@ text-align: center;
 }
 
 .center{
-text-align: center; 
+text-align: center;
+padding: 5px;
+background-color: #dcdcdc;
+border: 1px solid #666;
+color: #000;
+width: 40%;
+margin: 0 auto;
 }
+
+.wrapper{
+text-align: center;
+}
+
+footer { 
+    text-align: center;
+ font-size: 12px;
+}
+
+label {  
+    /*display: block; */  
+    cursor: pointer;  
+    position: relative;  
+    padding-left: 25px;  
+    margin-right: 15px;  
+    font-size: 13px;
+    width: 40%;  
+}
+
+input[type=radio] 
+{
+border: 10px;
+width: 100px;
+height: 16px;
+}
+
+nav {background:#FFF;float:left; width:100%; margin-bottom: 25px;}
+nav ul {text-align:center;}
+
+nav ul li {display:inline-block;}*/
+nav ul li:hover {background:#E6E6E6;}
+nav ul li a {display:block;padding:10px 20px;color:#444;}
+nav ul li ul {position:absolute;width:250px;background:#FFF;}
+nav ul li ul li {width:250px;}
+nav ul li ul li a {display:block;padding:10px 10px;color:#444;}
+nav ul li ul li:hover a {background:#F7F7F7;}
+nav ul li ul.fallback {display:none;}
+nav ul li:hover ul.fallback {display:block;}

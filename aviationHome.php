@@ -35,27 +35,17 @@
 	    <?php
 	    include 'nav.php';
 	    ?>
-	    
-	    	
-		
-	    <form>
-			Name: 
-		<input type="text" name="Name">
-		<input type="submit" value="Submit">
-		</form> 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script>
-		$(document).ready(function(){
-		$("form").submit(function(){
-			alert("Welcome to Aviation Flash Cards");
-			});
-		});
-	    </script>
     
        
        	<img src="images/img04.jpg" alt="Federal Aviation Regulation (FAR)"><br><br>
 		    
-        
+        <p>Welcome to Aviation 101 with George Comollo and congratulations on your path to becoming a Pilot. </p>
+
+        <p>This class is designed as in introduction to Aviation, which will prepare the student for the professional environment.</p>
+
+        <p>Throughout this course, the student will gain knowledge in extensive key terms, and knowledge in regards t various aircraft.</p>
+
+        <p>We encourage you to visit the link below, as it has many useful resources for this course of study.</p>
 		
 	    <footer>Green River Community College<br>12401 SE 320th St, Auburn, WA 98092<br>
 		(253) 833-9111<br> 

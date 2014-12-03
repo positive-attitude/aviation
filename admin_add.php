@@ -25,4 +25,6 @@ $query = $dbh->prepare($sql);
 $query->execute(array(':definition' => $definition, ':img_file' => $img_file, 
 	':img_alt' => $img_alt, ':audio_file' => $audio_file));
 
+echo 'Thank you for your submission.';
+
 ?>
