@@ -63,9 +63,5 @@ if (isset($_POST['submit'])) {
 </fieldset>
 </form>
 
-	<br>
-	<a href= "aviationHome.html">Home</a>
-	<br>
-
 </body>
 </html>

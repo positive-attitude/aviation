@@ -102,7 +102,7 @@
                         <?php
                                 
                                 if ($previous==NULL || $previous==0){
-                                    echo  'aviationHome.html';
+                                    echo  'aviationHome.php';
                                 }else{
                                     echo 'tutorial.php?id='.$previous;
                                 } 
@@ -112,7 +112,7 @@
                         <a href="
                         <?php
                                 if ($next==NULL){
-                                    echo  'aviationHome.html';
+                                    echo  'aviationHome.php';
                                 } else if ($next==7){
                                     echo 'tutorial.php?id=1';
                                 }
